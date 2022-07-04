@@ -2,14 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 
 import TheHeader from "@/components/TheHeader";
-import TheFinder from "@/components/TheFinder";
-import TheSearch from "@/components/TheSearch";
+import TheSearcher from "@/components/TheSearcher";
 
 Vue.config.productionTip = false;
 
 Vue.component("the-header", TheHeader);
-Vue.component("the-finder", TheFinder);
-Vue.component("the-search", TheSearch);
+Vue.component("the-searcher", TheSearcher);
 
 new Vue({
   render: (h) => h(App),

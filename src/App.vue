@@ -1,6 +1,5 @@
 <template>
-  <!-- <the-header></the-header> -->
-  <the-finder></the-finder>
+  <the-header></the-header>
 </template>
 
 <style>
