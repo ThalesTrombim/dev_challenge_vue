@@ -1,15 +1,17 @@
 <template>
   <div class="backdrop">
     <main>
-      <ul>
+      <ul class="optionsList">
         <li>
-          <div class="filter">
+          <div class="filter" @click="setNewCity">
             <span>LOCATION</span>
+            <p class="chosenCity">{{ filteredOptions.city }}</p>
           </div>
         </li>
         <li>
           <div class="filter">
             <span>GUESTS</span>
+            <p v-if="filteredOptions.guests === 0">Add guests</p>
           </div>
         </li>
         <li>
@@ -21,6 +23,14 @@
                 search
             </button>
           </div>
+        </li>
+      </ul>
+      <ul class="citiesList" v-if="filteredOptions.city === ''">
+        <li v-for="city in cities" :key="city" :id="city" @click="setCity(city)">
+          <span class="material-symbols-outlined">
+            pin_drop
+          </span> 
+          {{ city }}
         </li>
       </ul>
     </main>
@@ -42,6 +52,14 @@ export default {
         guests: 0
       }
     }
+  }, 
+  methods: {
+    setCity(city) {
+      this.filteredOptions.city = city;
+    },
+    setNewCity() {
+      this.filteredOptions.city = '';
+    }
   }
 }
 </script>
@@ -55,19 +73,22 @@ export default {
 main {
   background: #FFF;
   padding: 93px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
 }
-ul {
+.optionsList {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 1px 6px 0px #0000001A;
   border-radius: 16px;
 }
-li {
+.optionsList li {
   list-style: none;
   width: 100%;
   border-right: 1px solid #F2F2F2;
 }
-li:last-child{
+.optionsList li:last-child{
   border-right: none;
 }
 .filter {
@@ -77,6 +98,11 @@ li:last-child{
   color: #333333;
   font-size: 9px;
   font-weight: bold;
+}
+.filter > p {
+  color: #BDBDBD;
+  font-size: 14px;
+  /* font-weight: bold; */
 }
 .filter.action {
   display: flex;
@@ -103,5 +129,25 @@ li:last-child{
   filter: brightness(1.08)
 }
 
+.citiesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.citiesList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.citiesList li:hover {
+  transform: scale(1.01);
+}
+
+.filter .chosenCity {
+  color: #333333;
+  font-weight: 500;
+}
 
 </style>
