@@ -25,14 +25,28 @@
           </div>
         </li>
       </ul>
-      <ul class="citiesList" v-if="filteredOptions.city === ''">
-        <li v-for="city in cities" :key="city" :id="city" @click="setCity(city)">
-          <span class="material-symbols-outlined">
-            pin_drop
-          </span> 
-          {{ city }}
-        </li>
-      </ul>
+      <div class="actions">
+        <div class="citiesContainer">
+          <ul class="citiesList" v-if="filteredOptions.city === ''">
+            <li v-for="city in cities" :key="city" :id="city" @click="setCity(city)">
+              <span class="material-symbols-outlined">
+                pin_drop
+              </span> 
+              {{ city }}
+            </li>
+          </ul>
+        </div>
+        <div class="guestsContainer">
+          <the-guests @guests="adultsCounter">
+            <p>Adults</p>
+            <span>Ages 13 or above</span>
+          </the-guests>
+          <the-guests>
+            <p>Children</p>
+            <span>Ages 2-12</span>
+          </the-guests>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -59,6 +73,10 @@ export default {
     },
     setNewCity() {
       this.filteredOptions.city = '';
+    },
+    adultsCounter(val) {
+      console.log('chamando')
+      console.log(val)
     }
   }
 }
@@ -148,6 +166,19 @@ main {
 .filter .chosenCity {
   color: #333333;
   font-weight: 500;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+}
+.citiesContainer {
+  flex: 1;
+}
+.guestsContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 </style>
