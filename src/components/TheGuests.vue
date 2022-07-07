@@ -22,6 +22,12 @@
 <script>
 export default {
   emits: ['guests'],
+  props: {
+    type: {
+      type: String,
+      default: 'adult'
+    }
+  },
   data() {
     return {
       counter: 0,
@@ -35,9 +41,12 @@ export default {
       this.$emit('guests', this.counter);
     },
     removeGuest() {
-      if(this.counter-1 > 0) {
+      if(this.counter-1 > 0 && this.type === 'adult') {
+        this.counter--
+      } else if (this.counter-1 >= 0) {
         this.counter--
       }
+      this.$emit('guests', this.counter);
     }
   }
 };

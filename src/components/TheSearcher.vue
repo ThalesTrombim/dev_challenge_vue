@@ -12,6 +12,7 @@
           <div class="filter">
             <span>GUESTS</span>
             <p v-if="filteredOptions.guests === 0">Add guests</p>
+            <p v-else>{{ filteredOptions.guests }}</p>
           </div>
         </li>
         <li>
@@ -41,7 +42,7 @@
             <p>Adults</p>
             <span>Ages 13 or above</span>
           </the-guests>
-          <the-guests>
+          <the-guests @guests="childrenCounter" type="children">
             <p>Children</p>
             <span>Ages 2-12</span>
           </the-guests>
@@ -64,7 +65,9 @@ export default {
       filteredOptions: {
         city: '',
         guests: 0
-      }
+      },
+      children: 0,
+      adults: 0,
     }
   }, 
   methods: {
@@ -75,8 +78,15 @@ export default {
       this.filteredOptions.city = '';
     },
     adultsCounter(val) {
-      console.log('chamando')
-      console.log(val)
+      this.adults = val;
+      this.totalGuests();
+    },
+    childrenCounter(val) {
+      this.children = val;
+      this.totalGuests();
+    },
+    totalGuests() {
+      this.filteredOptions.guests = this.children + this.adults;
     }
   }
 }
