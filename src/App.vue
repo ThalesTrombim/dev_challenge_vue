@@ -2,6 +2,12 @@
   <the-header></the-header>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 <style>
 * {
   margin: 0;

@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" id="backdrop" @click="close">
     <main>
       <ul class="optionsList">
         <li>
@@ -90,6 +90,11 @@ export default {
     },
     submitFilteredOptions() {
       this.$emit('setData', this.filteredOptions);
+    },
+    close(e) {
+      if(e.target.id === 'backdrop'){
+        this.$emit('close')
+      }
     }
   }
 }

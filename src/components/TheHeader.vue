@@ -15,7 +15,7 @@
         </the-filter>
       </div>
     </div>
-    <the-searcher v-else @setData="setData"></the-searcher>
+    <the-searcher v-else @setData="setData" @close="closeSearcher"></the-searcher>
   </header>
 </template>
 
@@ -38,6 +38,9 @@ export default {
     setData(infos) {
       this.city = infos.city;
       this.guests = infos.guests
+      this.doSearch = false;
+    },
+    closeSearcher() {
       this.doSearch = false;
     }
   }
