@@ -1,7 +1,7 @@
 [
   {
-    "city": "Helsinki",
-    "country": "Finland",
+    "city": "Paris",
+    "country": "France",
     "superHost": false,
     "title": "Stylist apartment in center of the city",
     "rating": 4.4,
@@ -12,8 +12,8 @@
     "id": 1
   },
   {
-    "city": "Turku",
-    "country": "Finland",
+    "city": "New York",
+    "country": "United States",
     "superHost": false,
     "title": "Nice apartment in center of Helsinki",
     "rating": 4.2,
@@ -24,8 +24,8 @@
     "id": 2
   },
   {
-    "city": "Helsinki",
-    "country": "Finland",
+    "city": "Paris",
+    "country": "France",
     "superHost": true,
     "title": "Arty interior in 1900 wooden house",
     "rating": 4.5,
@@ -36,8 +36,8 @@
     "id": 3
   },
   {
-    "city": "Helsinki",
-    "country": "Finland",
+    "city": "Paris",
+    "country": "France",
     "superHost": false,
     "title": "Apartment next to market spuare",
     "rating": 4.48,
@@ -48,8 +48,8 @@
     "id": 4
   },
   {
-    "city": "Turku",
-    "country": "Finland",
+    "city": "New York",
+    "country": "United States",
     "superHost": true,
     "title": "Villa Aurora guest-house",
     "rating": 4.75,
@@ -60,8 +60,8 @@
     "id": 5
   },
   {
-    "city": "Vaasa",
-    "country": "Finland",
+    "city": "Rome",
+    "country": "Italy",
     "superHost": true,
     "title": "A cosy family house",
     "rating": 4.95,
@@ -72,8 +72,8 @@
     "id": 6
   },
   {
-    "city": "Vaasa",
-    "country": "Finland",
+    "city": "Rome",
+    "country": "Italy",
     "superHost": false,
     "title": "Lovely Studio near Railway Station",
     "rating": 4.68,
@@ -84,8 +84,8 @@
     "id": 7
   },
   {
-    "city": "Oulu",
-    "country": "Finland",
+    "city": "Madrid",
+    "country": "Spain",
     "superHost": false,
     "title": "Peaceful little home in city center",
     "rating": 4.12,
@@ -96,8 +96,8 @@
     "id": 8
   },
   {
-    "city": "Oulu",
-    "country": "Finland",
+    "city": "Madrid",
+    "country": "Spain",
     "superHost": false,
     "title": "Beautiful new studio apartment nearby the center",
     "rating": 4.49,
@@ -108,8 +108,8 @@
     "id": 9
   },
   {
-    "city": "Oulu",
-    "country": "Finland",
+    "city": "Madrid",
+    "country": "Spain",
     "superHost": true,
     "title": "Cozy woodhouse flat with wooden sauna",
     "rating": 4.38,
@@ -120,8 +120,8 @@
     "id": 10
   },
   {
-    "city": "Vaasa",
-    "country": "Finland",
+    "city": "Rome",
+    "country": "Italy",
     "superHost": false,
     "title": "Brand new studio apartment near the harbour",
     "rating": 4.89,
@@ -132,8 +132,8 @@
     "id": 11
   },
   {
-    "city": "Helsinki",
-    "country": "Finland",
+    "city": "Paris",
+    "country": "France",
     "superHost": false,
     "title": "Beautiful and comfortable old wooden house",
     "rating": 4.63,
@@ -144,8 +144,8 @@
     "id": 12
   },
   {
-    "city": "Turku",
-    "country": "Finland",
+    "city": "New York",
+    "country": "United States",
     "superHost": false,
     "title": "Turku Nordic Home near city center",
     "rating": 4.24,
@@ -156,8 +156,8 @@
     "id": 13
   },
   {
-    "city": "Turku",
-    "country": "Finland",
+    "city": "New York",
+    "country": "United States",
     "superHost": true,
     "title": "Nice 2 room apartment close to everything",
     "rating": 4.34,

@@ -38,6 +38,7 @@ export default {
     setData(infos) {
       this.city = infos.city;
       this.guests = infos.guests
+      this.$emit('filter', {city: this.city, guests: this.guests})
       this.doSearch = false;
     },
     closeSearcher() {

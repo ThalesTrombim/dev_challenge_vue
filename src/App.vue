@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <the-header></the-header>
+  <div class="content">
+    <the-header @filter="doFilter"></the-header>
     <section class="stayments-container">
       <div class="stayments">
         <the-card
-          v-for="stay in houses"
+          v-for="stay in filteredHouses"
           :key="stay.id"
           :photo="stay.photo"
           :superHost="stay.superHost"
@@ -28,12 +28,21 @@ export default {
   components: { TheCard },
   data() {
     return {
-      houses: stays
+      houses: stays,
+      filteredHouses: stays
     }
   },
-  mounted() {
-    console.log(this.houses)
-  }
+  methods: {
+    doFilter(val) {
+      const { city } = val;
+      const [, country] = city.split(", ");
+
+      console.log(country)
+      this.filteredHouses = this.houses.filter(stay => stay.country.includes(country))
+
+      console.log(this.houses)
+    },
+  },
 }
 </script>
 
@@ -47,6 +56,8 @@ export default {
 }
 .stayments-container {
   padding: 0 16px;
+  padding-bottom: 53px;
+  min-height: calc(100vh - 222px);
 }
 .stayments {
   display: grid;

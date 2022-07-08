@@ -8,6 +8,7 @@
 footer {
   display: flex;
   align-items: center;
+  justify-self: end;
   justify-content: center;
   padding-top: 53px;
   padding-bottom: 26px;
