@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     handleSearch() {
-      console.log('teste')
+      console.log('testando')
     },
     openSearch() {
       this.doSearch = true;
