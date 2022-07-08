@@ -6,7 +6,7 @@
       </h1>
 
       <div>
-        <the-filter></the-filter>
+        <the-filter guestsAmount="Add guests" @submited="handleSearch" @openSearch="openSearch"></the-filter>
       </div>
     </div>
     <the-searcher v-else></the-searcher>
@@ -18,6 +18,14 @@ export default {
   data() {
     return {
       doSearch: false
+    }
+  },
+  methods: {
+    handleSearch() {
+      console.log('teste')
+    },
+    openSearch() {
+      this.doSearch = true;
     }
   }
 }
