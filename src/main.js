@@ -6,6 +6,7 @@ import TheSearcher from "@/components/TheSearcher";
 import TheGuests from "@/components/TheGuests";
 import TheFilter from "@/components/TheFilter";
 import TheCard from "@/components/TheCard.vue";
+import TheFooter from "@/components/TheFooter";
 
 Vue.config.productionTip = false;
 
@@ -14,6 +15,7 @@ Vue.component("the-searcher", TheSearcher);
 Vue.component("the-guests", TheGuests);
 Vue.component("the-filter", TheFilter);
 Vue.component("the-card", TheCard);
+Vue.component("the-footer", TheFooter);
 
 new Vue({
   render: (h) => h(App),

@@ -16,6 +16,7 @@
         </the-card>
       </div>
     </section>
+    <the-footer></the-footer>
   </div>
 </template>
 
