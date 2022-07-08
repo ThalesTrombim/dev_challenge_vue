@@ -4,7 +4,7 @@
       <ul @click="openSearch">
         <li>
           <div class="filteredInfo">
-            <p>Paris, France</p>
+            <p>{{ city }}</p>
           </div>
         </li>
         <li>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  props: ['guestsAmount'],
+  props: ['guestsAmount', 'city'],
   emits: ['submited', 'openSearch'],
   methods: {
     doSearch() {

@@ -17,7 +17,7 @@
         </li>
         <li>
           <div class="filter action">
-            <button>
+            <button @click="submitFilteredOptions">
               <span class="material-symbols-outlined">
                 search
               </span>
@@ -87,6 +87,9 @@ export default {
     },
     totalGuests() {
       this.filteredOptions.guests = this.children + this.adults;
+    },
+    submitFilteredOptions() {
+      this.$emit('setData', this.filteredOptions);
     }
   }
 }

@@ -6,10 +6,16 @@
       </h1>
 
       <div>
-        <the-filter guestsAmount="Add guests" @submited="handleSearch" @openSearch="openSearch"></the-filter>
+        <the-filter 
+          :guestsAmount="guests"
+          :city="city" 
+          @submited="handleSearch" 
+          @openSearch="openSearch"
+        >
+        </the-filter>
       </div>
     </div>
-    <the-searcher v-else></the-searcher>
+    <the-searcher v-else @setData="setData"></the-searcher>
   </header>
 </template>
 
@@ -17,7 +23,9 @@
 export default {
   data() {
     return {
-      doSearch: false
+      city: 'Paris, France',
+      guests: 'Add guests',
+      doSearch: false,
     }
   },
   methods: {
@@ -26,6 +34,11 @@ export default {
     },
     openSearch() {
       this.doSearch = true;
+    },
+    setData(infos) {
+      this.city = infos.city;
+      this.guests = infos.guests
+      this.doSearch = false;
     }
   }
 }
