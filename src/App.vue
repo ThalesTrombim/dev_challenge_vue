@@ -1,6 +1,7 @@
 <template>
   <div class="content">
-    <the-header @filter="doFilter"></the-header>
+    <!-- <the-header></the-header> -->
+    <the-searcher @setData="doFilter"></the-searcher>
     <section class="stayments-container">
       <div class="stayments">
         <the-card

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div v-if="!doSearch" class="container">
+    <div class="container">
       <h1>
         <img src="../assets/logo.png" alt="Windbnd Logo">
       </h1>
@@ -15,7 +15,7 @@
         </the-filter>
       </div>
     </div>
-    <the-searcher v-else @setData="setData" @close="closeSearcher"></the-searcher>
+    <!-- <the-searcher v-else @setData="setData" @close="closeSearcher"></the-searcher> -->
   </header>
 </template>
 
@@ -34,12 +34,6 @@ export default {
     },
     openSearch() {
       this.doSearch = true;
-    },
-    setData(infos) {
-      this.city = infos.city;
-      this.guests = infos.guests
-      this.$emit('filter', {city: this.city, guests: this.guests})
-      this.doSearch = false;
     },
     closeSearcher() {
       this.doSearch = false;

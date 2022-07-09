@@ -90,6 +90,7 @@ export default {
     },
     submitFilteredOptions() {
       this.$emit('setData', this.filteredOptions);
+      console.log(this.filteredOptions);
     },
     close(e) {
       if(e.target.id === 'backdrop'){
@@ -105,7 +106,8 @@ export default {
   background: rgba(0, 0, 0, .4);
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
 }
 
 main {
