@@ -7,7 +7,7 @@
 
       <div>
         <the-filter 
-          :guestsAmount="guests"
+          :guestsAmount="amountGuests"
           :city="city" 
           @submited="handleSearch" 
           @openSearch="openSearch"
@@ -15,16 +15,20 @@
         </the-filter>
       </div>
     </div>
-    <!-- <the-searcher v-else @setData="setData" @close="closeSearcher"></the-searcher> -->
   </header>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      city: 'Paris, France',
-      guests: 'Add guests',
+  props: ['guests', 'city'],
+  computed: {
+    amountGuests() {
+      if(this.guests === 0) {
+        return 'Add guests';
+      } else if(this.guests === 1) {
+        return `${this.guests} guest`;
+      }
+      return `${this.guests} guests`
     }
   },
   methods: {

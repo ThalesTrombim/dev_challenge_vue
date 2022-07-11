@@ -5,7 +5,7 @@
         <li>
           <div class="filter" @click="setNewCity">
             <span>LOCATION</span>
-            <p class="chosenCity">{{ filteredOptions.city }}</p>
+            <p class="chosenCity">{{ isCitySelected }}</p>
           </div>
         </li>
         <li>
@@ -54,6 +54,7 @@
 
 <script>
 export default {
+  props: ['isCitySelected'],
   data() {
     return {
       cities: [

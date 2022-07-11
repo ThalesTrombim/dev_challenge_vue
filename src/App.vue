@@ -1,7 +1,19 @@
 <template>
   <div class="content">
-    <the-searcher v-if="doSearch" @setData="doFilter" @close="closeSearcher"></the-searcher>
-    <the-header v-else @openSearch="openSearch"></the-header>
+    <the-searcher 
+      v-if="doSearch" 
+      @setData="doFilter" 
+      @close="closeSearcher"
+      :isCitySelected="city"
+      >
+    </the-searcher>
+    <the-header 
+      v-else 
+      @openSearch="openSearch" 
+      :city="city"
+      :guests="guests"
+    >
+    </the-header>
     <section class="stayments-container">
       <div class="stayments">
         <the-card
@@ -32,14 +44,18 @@ export default {
       houses: stays,
       filteredHouses: stays,
       doSearch: false,
+      city: 'Paris France',
+      guests: 0
     }
   },
   methods: {
     doFilter(val) {
-      const { city } = val;
+      const { guests, city } = val;
       const [, country] = city.split(", ");
 
-      console.log(country)
+      this.city = city;
+      this.guests = guests;
+
       this.filteredHouses = this.houses.filter(stay => stay.country.includes(country))
 
       this.doSearch = false;
