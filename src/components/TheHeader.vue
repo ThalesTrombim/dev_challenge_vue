@@ -25,7 +25,6 @@ export default {
     return {
       city: 'Paris, France',
       guests: 'Add guests',
-      doSearch: false,
     }
   },
   methods: {
@@ -33,11 +32,9 @@ export default {
       console.log('testando')
     },
     openSearch() {
-      this.doSearch = true;
+      this.$emit('openSearch')
     },
-    closeSearcher() {
-      this.doSearch = false;
-    }
+    
   }
 }
 </script>

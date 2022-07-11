@@ -90,7 +90,6 @@ export default {
     },
     submitFilteredOptions() {
       this.$emit('setData', this.filteredOptions);
-      console.log(this.filteredOptions);
     },
     close(e) {
       if(e.target.id === 'backdrop'){

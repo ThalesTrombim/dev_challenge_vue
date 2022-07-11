@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <!-- <the-header></the-header> -->
-    <the-searcher @setData="doFilter"></the-searcher>
+    <the-searcher v-if="doSearch" @setData="doFilter" @close="closeSearcher"></the-searcher>
+    <the-header v-else @openSearch="openSearch"></the-header>
     <section class="stayments-container">
       <div class="stayments">
         <the-card
@@ -30,7 +30,8 @@ export default {
   data() {
     return {
       houses: stays,
-      filteredHouses: stays
+      filteredHouses: stays,
+      doSearch: false,
     }
   },
   methods: {
@@ -41,8 +42,14 @@ export default {
       console.log(country)
       this.filteredHouses = this.houses.filter(stay => stay.country.includes(country))
 
-      console.log(this.houses)
+      this.doSearch = false;
     },
+    closeSearcher() {
+      this.doSearch = false;
+    },
+    openSearch() {
+      this.doSearch = true;
+    }
   },
 }
 </script>
